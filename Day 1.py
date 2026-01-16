@@ -7,9 +7,11 @@ def addInts(num: int) -> int:
 #addInts(5)
 
 import random
+from random import randint
+from random import randomString
 def listOfRandomStrings() -> list[str]:
     new_list = []
-    num_items = random,randint(1,5)
+    num_items = random.randint(1,5)
     for i in range(num_items):
         string = randomString()
         new_list.append(string)
