@@ -19,10 +19,17 @@ def countWords(filename: str) -> dict[str, int]:
 
 
 def main() -> None:
-    filename = "words.txt"
+    filename = "data/words.txt"
     counts = countWords(filename)
     print(counts)
 
 
 if __name__ == "__main__":
     main()
+
+"""
+1. Copying a file created 2 identical coppies so the funciton can still read the data.
+2. cp is safer because it leave the original file untouched.
+3. If the data folder is deleted, the program will not be able to find the file and will raise a FileNotFoundError.
+4. The dictionary keys represent words, which are strings. If they were stored as integers, boolens, floats, etc, it would create errors.
+"""
