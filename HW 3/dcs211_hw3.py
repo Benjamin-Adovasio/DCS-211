@@ -31,3 +31,11 @@ def histCaseSensitive(word_dict: Dict[str, List[int]]) -> None:
 
     plt.simple_stacked_bar(keys, [uppers, lowers], width=80)
     plt.show()
+
+def histCaseInsensitive(word_dict: Dict[str, List[int]]) -> None:
+
+    keys = list(word_dict.keys())
+    totals = [sum(word_dict[word]) for word in keys]
+
+    plt.simple_bar(keys, totals, width=80)
+    plt.show()
