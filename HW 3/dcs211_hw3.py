@@ -39,3 +39,32 @@ def histCaseInsensitive(word_dict: Dict[str, List[int]]) -> None:
 
     plt.simple_bar(keys, totals, width=80)
     plt.show()
+
+
+def main() -> None:
+
+    """
+    Main function to call other functions. Functions can also be called directly from terminal.
+    """
+
+    print("=== Test File 1 ===")
+    d1 = parseWords("test1.txt")
+    print(d1)
+    histCaseSensitive(d1)
+    histCaseInsensitive(d1)
+
+    print("=== Test File 2 ===")
+    d2 = parseWords("test2.txt")
+    print(d2)
+    histCaseSensitive(d2)
+    histCaseInsensitive(d2)
+
+    print("=== Test File 3 ===")
+    d3 = parseWords("test3.txt")
+    print(d3)
+    histCaseSensitive(d3)
+    histCaseInsensitive(d3)
+
+
+if __name__ == "__main__":
+    main()
