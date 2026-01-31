@@ -1,4 +1,7 @@
 def parseWords(filename: str) -> Dict[str, List[int]]:
+    """
+    Primary function that reads the file and lists words
+    """
     words_dict: Dict[str, List[int]] = {}
 
     with open(filename, "r") as input_file:
@@ -24,6 +27,9 @@ def parseWords(filename: str) -> Dict[str, List[int]]:
     return word_dict
 
 def histCaseSensitive(word_dict: Dict[str, List[int]]) -> None:
+    """
+    bar histogram for each word, not ignoring capitalization
+    """
 
     keys = list(word_dict.keys())
     uppers = [word_dict[word][0] for word in keys]
@@ -33,6 +39,10 @@ def histCaseSensitive(word_dict: Dict[str, List[int]]) -> None:
     plt.show()
 
 def histCaseInsensitive(word_dict: Dict[str, List[int]]) -> None:
+
+    """
+    bar histogram for each word, ignoring capitalization
+    """
 
     keys = list(word_dict.keys())
     totals = [sum(word_dict[word]) for word in keys]
