@@ -1,7 +1,7 @@
 ==============================
 DCS 211: Lab 1
 Name: Jiang, Jerry
-Score: STUDENT_SCORE
+Score: N/A
 ====================================
 
 ---- AUTOGRADE OUTPUT ----

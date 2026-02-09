@@ -1,7 +1,7 @@
 ==============================
 DCS 211: Lab 1
 Name: Shimizu, Micah
-Score: STUDENT_SCORE
+Score: N/A
 ====================================
 
 ---- AUTOGRADE OUTPUT ----
