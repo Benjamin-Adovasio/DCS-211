@@ -37,7 +37,7 @@ for student_dir in "$AUTOGRADE_DIR"/*; do
   [ "$id" = "GRADING" ] && continue
   [ "$id" = "__MACOSX" ] && continue
 
-  pyfile="$(ls "$student_dir"/*.py 2>/dev/null | head -n 1)"
+  pyfile="$(ls "$student_dir"/*.py 2>/dev/null | grep -v '^.*/__graded_' | head -n 1)"
   [ -n "$pyfile" ] || continue
 
   outfile="$AUTOGRADE_DIR/dcs211_lab1_${id}.txt"
