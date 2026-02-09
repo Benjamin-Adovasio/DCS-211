@@ -1,34 +1,44 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -e
 
-AUTOGRADE_DIR="${1:-lab1_files/autograde}"
+AUTOGRADE_DIR="lab1_files/autograde"
 STUDENTS_FILE="$AUTOGRADE_DIR/students.txt"
 APPEND_FILE="$AUTOGRADE_DIR/GRADING/APPEND.py"
 
-[[ -f "$STUDENTS_FILE" ]] || { echo "students.txt missing"; exit 1; }
-[[ -f "$APPEND_FILE" ]] || { echo "APPEND.py missing"; exit 1; }
+if [ ! -f "$STUDENTS_FILE" ]; then
+  echo "students.txt not found"
+  exit 1
+fi
 
-mapfile -t IDS < <(
-  find "$AUTOGRADE_DIR" -mindepth 1 -maxdepth 1 -type d \
-  ! -name GRADING ! -name "__MACOSX" -printf '%f\n' | sort
-)
+if [ ! -f "$APPEND_FILE" ]; then
+  echo "APPEND.py not found"
+  exit 1
+fi
 
 lookup_name() {
-  local id="$1"
+  id="$1"
   awk -v id="$id" '
     $1==id {
       last=$NF
       first=""
-      for(i=2;i<NF;i++) first=(first ? first" " : "")$i
-      print last", "first
+      for(i=2;i<NF;i++) {
+        first = (first ? first" " : "") $i
+      }
+      print last ", " first
+      exit
     }
   ' "$STUDENTS_FILE"
 }
 
-for id in "${IDS[@]}"; do
-  student_dir="$AUTOGRADE_DIR/$id"
-  pyfile="$(find "$student_dir" -maxdepth 1 -name '*.py' | head -n 1 || true)"
-  [[ -n "$pyfile" ]] || continue
+for student_dir in "$AUTOGRADE_DIR"/*; do
+  [ -d "$student_dir" ] || continue
+
+  id="$(basename "$student_dir")"
+  [ "$id" = "GRADING" ] && continue
+  [ "$id" = "__MACOSX" ] && continue
+
+  pyfile="$(ls "$student_dir"/*.py 2>/dev/null | head -n 1)"
+  [ -n "$pyfile" ] || continue
 
   outfile="$AUTOGRADE_DIR/dcs211_lab1_${id}.txt"
 
@@ -41,7 +51,8 @@ Score: STUDENT_SCORE
 EOF
 
   name="$(lookup_name "$id")"
-  sed -i.bak "s/STUDENT_NAME/${name:-UNKNOWN}/" "$outfile" && rm "$outfile.bak"
+  [ -n "$name" ] || name="UNKNOWN"
+  sed -i.bak "s/STUDENT_NAME/$name/" "$outfile" && rm "$outfile.bak"
 
   graded="$student_dir/__graded_${id}.py"
   cp "$pyfile" "$graded"
@@ -52,9 +63,7 @@ EOF
 
   cat "$APPEND_FILE" >> "$graded"
 
-  set +e
   output="$(python3 "$graded" 2>&1)"
-  set -e
 
   {
     echo
