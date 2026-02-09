@@ -1,0 +1,24 @@
+Chris - CS
+Alex - Math
+Jordan - CS
+Taylor - Bio
+Dan - CS
+Goodness - bio
+Miles - Math
+Bill - CS
+
+
+| First Name | Last Name       | Role    |
+| ---------- | --------------- | ------- |
+| Benjamin   | Adovasio        | Student |
+| Chris      | Agbonkhese      | Teacher |
+| Xander     | Frey            | Student |
+| An         | Le              | student |
+| Jiwon      | Lee             | Student |
+| Marquez    | Narvaez-Estrada | Tutor |
+| Norland    | Ramirez         | Student |
+| Stuart     | Saltonstall     | student |
+| Kasper     | Troicki         | tutor |
+| Scarlett   | Werns           | Student |
+| Dexter     | Werns           | Student |
+

@@ -1,0 +1,18 @@
+2026-02-06 00:05:11 INFO  app=web pid=2311 msg="Server started" version=1.8.2
+2026-02-06 00:06:03 INFO  app=web route=/ status=200 user=anon ms=12
+2026-02-06 00:07:44 WARN  app=web msg="Slow query" query="SELECT * FROM courses" ms=2400
+2026-02-06 00:08:12 ERROR app=web route=/login status=500 user=anon msg="Database connection failed" code=DB_CONN
+2026-02-06 00:08:14 ERROR app=web route=/login status=500 user=anon msg="Database connection failed" code=DB_CONN
+2026-02-06 00:09:01 INFO  app=web route=/login status=200 user=anon ms=33
+2026-02-06 00:10:25 ERROR app=api route=/api/grades status=500 user=ca123 msg="Timeout talking to db" code=DB_TIMEOUT
+2026-02-06 00:11:18 INFO  app=api route=/api/grades status=200 user=ca123 ms=80
+2026-02-06 00:12:22 WARN  app=web msg="Disk space low" disk=/dev/disk1 free_gb=1.2
+2026-02-06 00:13:49 ERROR app=web route=/submit status=500 user=xf456 msg="Null pointer" code=NPE
+2026-02-06 00:14:02 INFO  app=web route=/submit status=200 user=xf456 ms=41
+2026-02-06 00:15:07 ERROR app=web route=/login status=500 user=anon msg="Database connection failed" code=DB_CONN
+2026-02-06 00:15:33 WARN  app=web msg="Slow query" query="SELECT * FROM users" ms=3100
+2026-02-06 00:16:10 INFO  app=web route=/ status=200 user=anon ms=10
+2026-02-06 00:17:55 ERROR app=api route=/api/login status=500 user=jl777 msg="Upstream 502 from auth-service" code=AUTH_502
+2026-02-06 00:18:01 INFO  app=api route=/api/login status=200 user=jl777 ms=90
+2026-02-06 00:19:40 ERROR app=web route=/login status=500 user=anon msg="Database connection failed" code=DB_CONN
+2026-02-06 00:20:12 INFO  app=web route=/ status=200 user=anon ms=9
