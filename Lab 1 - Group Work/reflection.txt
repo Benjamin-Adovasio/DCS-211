@@ -1,0 +1,6 @@
+Reflection for Lab 1 - Group Work:
+
+Unfortunately I was absent from class today due to illness, so I completed this lab independently, without a partner. I thought creating the rename.sh and reogranize.sh were much easie than writing grade.sh. 
+The grade.sh was the most challenging for me as I am used to linux bash scripting, however I learned in this lab that MacOS has several small differences in bash scripting than Linux which I 
+had to debugg. At the same time, I thought it was very rewarding when grade.sh finally worked correctly and gave the correct output files. I kept logs of all of my errors and what i did wrong
+in my git commit messages, so I can remember in the future when writing bash scripts for MacOS.
