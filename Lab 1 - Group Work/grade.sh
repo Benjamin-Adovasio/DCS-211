@@ -63,7 +63,9 @@ EOF
 
   cat "$APPEND_FILE" >> "$graded"
 
+  set +e
   output="$(python3 "$graded" 2>&1)"
+  set -e
 
   {
     echo
