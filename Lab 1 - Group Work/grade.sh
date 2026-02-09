@@ -75,7 +75,9 @@ EOF
   } >> "$outfile"
 
   score="$(echo "$output" | tail -n 1 | grep -Eo '[0-9]+[[:space:]]*/[[:space:]]*[0-9]+' || echo N/A)"
-  sed -i.bak "s/STUDENT_SCORE/$score/" "$outfile" && rm "$outfile.bak"
+  safe_score="$(printf '%s' "$score" | sed 's/[\/&]/\\&/g')"
+  sed -i.bak "s/STUDENT_SCORE/${safe_score}/" "$outfile" && rm "$outfile.bak"
+
 
   echo "Graded $id"
 done

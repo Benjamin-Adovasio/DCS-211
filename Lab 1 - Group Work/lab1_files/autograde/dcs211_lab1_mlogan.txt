@@ -1,11 +1,11 @@
 ==============================
 DCS 211: Lab 1
-Name: Reed, Andrew
+Name: Logan, Miles
 Score: STUDENT_SCORE
 ====================================
 
 ---- AUTOGRADE OUTPUT ----
-  File "/Users/benjamin/Desktop/GitHub Local/DCS 211/Lab 1 - Group Work/lab1_files/autograde/areed2/__graded_areed2.py", line 59
+  File "/Users/benjamin/Desktop/GitHub Local/DCS 211/Lab 1 - Group Work/lab1_files/autograde/mlogan/__graded_mlogan.py", line 59
     from typing import Callable
     ^^^^
 IndentationError: expected an indented block after function definition on line 41

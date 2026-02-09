@@ -1,0 +1,41 @@
+==============================
+DCS 211: Lab 1
+Name: Leamon, Ted
+Score: STUDENT_SCORE
+====================================
+
+---- AUTOGRADE OUTPUT ----
+Testing compute_sum([]):
+	 ✓ result   = 0
+	   expected = 0
+Testing compute_sum([0]):
+	 ✓ result   = 0
+	   expected = 0
+Testing compute_sum([1, 2, 3]):
+	 ✓ result   = 6
+	   expected = 6
+Testing compute_sum([-1, 2, -3]):
+	 ✓ result   = -2
+	   expected = -2
+Testing compute_product([]):
+	 ✓ result   = None
+	   expected = None
+Testing compute_product([0]):
+	 ✓ result   = 0
+	   expected = 0
+Testing compute_product([1, 2, 3]):
+	 ✓ result   = 6
+	   expected = 6
+Testing compute_product([-1, 2, -3]):
+	 ✓ result   = 6
+	   expected = 6
+Testing compute_product([-1, -2, -3]):
+	 ✓ result   = -6
+	   expected = -6
+Testing compute_product([-1, -2, -3, 0]):
+	 ✓ result   = 0
+	   expected = 0
+------------------------------
+Total tests passed: 10 / 10
+------------------------------
+---- END AUTOGRADE OUTPUT ----
