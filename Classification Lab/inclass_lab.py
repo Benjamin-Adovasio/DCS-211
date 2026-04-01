@@ -50,13 +50,16 @@ print(X.shape)
 #0 - malignant
 #1 - benigh
 
+'''
+Answer: The dataset contains 569 samples with 30 features each. The target variable has two classes: 0 (malignant) and 1 (benign). The goal is to classify tumors as either malignant or benign based on the features provided.
+'''
 ###############################
 # BLOCK 2: IMPORT LIBRARIES FOR CLASSIFIERS
 ###############################
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
-
+import numpy as np
 #########################################
 # BLOCK 3: IMPORT MODUL FOR DATA SPLIT
 #########################################
@@ -91,6 +94,15 @@ print("KNN:", knn.score(X_test, y_test))
 print("LogReg:", logreg.score(X_test, y_test))
 print("Tree:", tree.score(X_test, y_test))
 
+'''
+Answer: The results are as follows: 
+KNN: 0.956140350877193
+LogReg: 0.956140350877193
+Tree: 0.9298245614035088
+
+They are all very similar, however LogReg and KNN perform slightly better than the Decision Tree in terms of accuracy on the test set. The difference is not very large, but it suggests that KNN and Logistic Regression may be more effective for this particular dataset.
+'''
+
 ####################################
 #BLOCK 7
 # Part 2: Evaluation Metrics
@@ -104,6 +116,10 @@ print(confusion_matrix(y_test, knn.predict(X_test)))
 '''
 * Which model has better recall?
 * Which is better for detecting cancer?
+'''
+
+'''
+Answer: The recall for the model in Block 8 is 0.88 for malignant, so it correctly identifies 88% of cancer cases.
 '''
 #####################################
 from sklearn.metrics import classification_report
