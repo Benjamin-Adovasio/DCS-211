@@ -1,0 +1,6 @@
+[
+    {"text": "The beer was good.", "label": "pos"},
+    {"text": "I do not enjoy my job", "label": "neg"},
+    {"text": "I feel amazing!", "label": "pos"},
+    {"text": "I am very tired", "label": "neg"}
+]
